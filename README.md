@@ -1,5 +1,4 @@
-# eth_miner_alarm
-
+# ETH miner hasrate alarm/monitoring
 
 Only tested for api from nanominer 
 
