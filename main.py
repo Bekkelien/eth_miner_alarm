@@ -1,6 +1,8 @@
 import requests
 import time 
 
+from datetime import datetime
+
 from mail import sendmail
 
 # User interface
@@ -39,14 +41,10 @@ while 1:
             
             alarm_activated = True
 
+        # Get current time2222
+        time_now = datetime.now().strftime("%H:%M:%S")
 
-        # Read time 
-        localtime = time.localtime(time.time())
-        start_h = localtime[3]
-        start_m = localtime[4]
-        start_s = localtime[5]
-
-        print("Last reported hashrate:", str(last_reported_hashrate), "Time:", str(start_h) + ":" + str(start_m) + ":" + str(start_s))
+        print("Last reported hashrate:", last_reported_hashrate, "Time:", time_now)
 
     # Dirty expection handler
     except Exception as program_failure:
