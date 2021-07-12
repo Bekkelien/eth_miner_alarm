@@ -41,7 +41,7 @@ while 1:
             
             alarm_activated = True
 
-        # Get current time2222
+        # Get current time
         time_now = datetime.now().strftime("%H:%M:%S")
 
         print("Last reported hashrate:", last_reported_hashrate, "Time:", time_now)
