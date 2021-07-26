@@ -8,11 +8,10 @@ Only tested for api from nanominer, sends a email over mail.py (custom) when eth
 nanominer_api = "https://api.nanopool.org/v1/eth/reportedhashrate/ETH_ADRESS"
 ```
 
+### Rename config 
+Rename config.default.yaml to config.yaml and enter information in config, NB pwd are i cleartxt, so use a disposable email adress to send from 
 
-### Rename config to config.yaml 
-Enter information in config, NB pwd are i cleartxt, so use a disposable email adress to send from 
-
-``` python
+``` shell
 mail:
   to: "TEST@example.com"
   from: "test@example.com"

@@ -19,11 +19,7 @@ def sendmail():
         msg['From'] = fro_m
         msg['To'] = to
 
-        # Send the message via gmail's regular server, over SSL - passwords are being sent, afterall
         s = smtplib.SMTP_SSL(smtp)
-        # uncomment if interested in the actual smtp conversation
-        # s.set_debuglevel(1)
-        # do the smtp auth; sends ehlo if it hasn't been sent already
         s.login(fro_m, pwd)
 
         s.sendmail(fro_m, to, msg.as_string())
