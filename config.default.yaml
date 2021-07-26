@@ -1,0 +1,6 @@
+
+mail:
+  to: "TEST@example.com"
+  from: "test@example.com"
+  pwd: "pwd"
+  smtp: "smtp.xxxx.com"
