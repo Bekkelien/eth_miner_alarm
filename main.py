@@ -34,7 +34,7 @@ while 1:
             sendmail()
             print("Alarm, mail i sendt out")
 
-            alar3m_activated = False
+            alarm_activated = False
 
         # If hasrate limit has been restored activate alarm again 
         if int(last_reported_hashrate) >= int(hashrate_limit):
