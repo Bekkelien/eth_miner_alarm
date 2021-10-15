@@ -9,7 +9,7 @@ nanominer_api = "https://api.nanopool.org/v1/eth/reportedhashrate/ETH_ADRESS"
 ```
 
 ### Rename config 
-Rename config.default.yaml to config.yaml and enter information in config, NB pwd are i cleartxt, so use a disposable email adress to send from 
+Rename config.default.yaml to config.yaml and enter information in config, NB pwd are in cleartxt, so use a disposable email adress to send from 
 
 ``` shell
 mail:
