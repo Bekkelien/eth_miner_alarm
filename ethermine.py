@@ -5,10 +5,11 @@ from datetime import datetime
 
 from mail import sendmail
 
-WORKERS = 4
+# User configuration settings
+HASHRATE_LIMIT = 400
 ETH = "Feab6260F1c88b515137E152593ac6b3683D925B"
-MAIL = True # Do not set this to false!
 
+MAIL = True # Do not set this to false!
 
 while True:
     response_API = requests.get('https://api.ethermine.org/miner/:' + ETH + '/currentStats')
@@ -17,20 +18,23 @@ while True:
         data = response_API.text
         data = json.loads(data)
 
-        if isinstance(data["data"]["activeWorkers"], int):
+        reported_hashrate = data['data']['reportedHashrate']
 
-            if data["data"]["activeWorkers"] == WORKERS:
-                print(f"{datetime.now().time()} All workers are online")
+        if isinstance(reported_hashrate,int):
+            reported_hashrate = reported_hashrate / 1000000
+            if reported_hashrate >= HASHRATE_LIMIT:
+                print(f"{datetime.now().time()} Reported hashrate: {reported_hashrate} MH/s")
                 MAIL = True
             
-            if data["data"]["activeWorkers"] < WORKERS and MAIL == True:
-                print(f"{datetime.now().time()}  WARNING, Total number of workers are : {data['data']['activeWorkers']}")
-                sendmail()
-                print(f"{datetime.now().time()} WARNING email shipped")
-                MAIL = False
-            
-            elif data["data"]["activeWorkers"] < WORKERS:
-                print(f"{datetime.now().time()} Wating for workers to go back online")
+            if MAIL == True:
+                if reported_hashrate < HASHRATE_LIMIT:
+                    MAIL = False
+                    print(f"{datetime.now().time()} WARNING, Reported hashrate are: {reported_hashrate} MH/s")
+                    sendmail()
+                    print(f"{datetime.now().time()} WARNING email shipped")
+                    
+            else:
+                print(f"{datetime.now().time()} Wating on hashrate")
 
         else:
             print(f"{datetime.now().time()} Respons value error")

@@ -1,4 +1,4 @@
-# ETH miner hasrate/workers alarm/monitoring
+# ETH miner hasrate alarm/monitoring
 
 ## Needs to have your spesific ETH_ADRESS and email in config
 
@@ -7,15 +7,14 @@
 ETH = "ETH_ADRESS"
 ```
 
-### ehtermine.py for active workers warning
+### ehtermine.py for hashrate warning
 
 Note 
 * That if we can't send email it will crash, add inn retry on send email
 * Datetime is now for every print, make a function in the future
-* Ethermine's api are so slow that the inbuild warning system are 'faster'
 
 ```python
-WORKERS = 4
+HASHRATE_LIMIT = 100 #Just below your lowest expected hashrate under normal operation 
 ETH = "ETH_ADRESS"
 ```
 
