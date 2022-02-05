@@ -12,6 +12,7 @@ ETH = "ETH_ADRESS"
 Note 
 * That if we can't send email it will crash, add inn retry on send email
 * Datetime is now for every print, make a function in the future
+* Ethermine's api are so slow that the inbuild warning system are 'faster'
 
 ```python
 WORKERS = 4
