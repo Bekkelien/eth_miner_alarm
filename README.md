@@ -7,7 +7,7 @@
 ETH = "ETH_ADRESS"
 ```
 
-### ehtermine.py for hashrate warning
+### ehtermine.py for hashrate warning (Expect up to 10min delay, still way better then ethermine's alarm system)
 
 Note 
 * That if we can't send email it will crash, add inn retry on send email
