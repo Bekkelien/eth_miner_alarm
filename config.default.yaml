@@ -1,6 +1,9 @@
-
 mail:
-  to: "TEST@example.com"
+  to: "test@example.com"
   from: "test@example.com"
   pwd: "pwd"
   smtp: "smtp.xxxx.com"
+
+eth:
+  nanominer: "xxxx"
+  ethermine: "xxxx"

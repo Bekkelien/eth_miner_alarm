@@ -5,10 +5,12 @@ from datetime import datetime
 
 from mail import sendmail
 
-ETH = "0xfeab6260f1c88b515137e152593ac6b3683d925b"
+from configuration import read_config 
+
+config = read_config()
 
 # User interface
-nanominer_api = "https://api.nanopool.org/v1/eth/reportedhashrate/" + ETH
+nanominer_api = "https://api.nanopool.org/v1/eth/reportedhashrate/" + config["eth"]["nanominer"]
 
 hashrate_limit = input("Enter alarm limit in MH/s: \n")
 
