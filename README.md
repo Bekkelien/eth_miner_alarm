@@ -7,14 +7,14 @@
 ETH = "ETH_ADRESS"
 ```
 
-### ehtermine.py for hashrate warning (Expect up to 10min delay, still way better then ethermine's alarm system)
+### ehtermine.py for hashrate warning 
+Expect up to 10min delay, still way 'better' then ethermine's alarm system
 
 Note 
 * That if we can't send email it will crash, add inn retry on send email
 * Datetime is now for every print, make a function in the future
 
 ```python
-HASHRATE_LIMIT = 100 #Just below your lowest expected hashrate under normal operation 
 ETH = "ETH_ADRESS"
 ```
 

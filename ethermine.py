@@ -6,10 +6,11 @@ from datetime import datetime
 from mail import sendmail
 
 # User configuration settings
-HASHRATE_LIMIT = 400
 ETH = "Feab6260F1c88b515137E152593ac6b3683D925B"
 
 MAIL = True # Do not set this to false!
+
+HASHRATE_LIMIT = int(input("Enter alarm limit in MH/s: \n"))
 
 while True:
     response_API = requests.get('https://api.ethermine.org/miner/:' + ETH + '/currentStats')

@@ -10,7 +10,7 @@ ETH = "0xfeab6260f1c88b515137e152593ac6b3683d925b"
 # User interface
 nanominer_api = "https://api.nanopool.org/v1/eth/reportedhashrate/" + ETH
 
-hashrate_limit = input("Enter alarm limit in Mh/s: \n")
+hashrate_limit = input("Enter alarm limit in MH/s: \n")
 
 # Variable to reset alarm when hasrate has been restored to hasrate limit
 alarm_activated = True
