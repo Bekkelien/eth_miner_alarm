@@ -20,8 +20,8 @@ eth:
 ### ehtermine.py for hashrate warning 
 Expect up to 10min delay, still way 'better' then ethermine's alarm system
 
-Note 
-* That if we can't send email it will crash, add inn retry on send email
-* Datetime is now for every print, make a function in the future
+Note:
+- [ ] That if we can't send email it will crash, add inn retry on send email
+- [ ] Datetime is now for every print, make a function in the future
 
 
