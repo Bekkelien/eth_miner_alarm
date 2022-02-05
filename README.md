@@ -1,11 +1,17 @@
-# ETH miner hasrate alarm/monitoring
+# ETH miner hasrate/workers alarm/monitoring
 
-Only tested for api from nanominer, sends a email over mail.py when eth hasrate are lower the set limit
+## Needs to have your spesific ETH_ADRESS and email in config
 
-### Needs to have your spesific ETH_ADRESS
+### nanominer.py for hashrate warning
+```python
+ETH = "ETH_ADRESS"
+```
+
+### ehtermine.py for active workers warning
 
 ```python
-nanominer_api = "https://api.nanopool.org/v1/eth/reportedhashrate/ETH_ADRESS"
+WORKERS = 4
+ETH = "ETH_ADRESS"
 ```
 
 ### Rename config 

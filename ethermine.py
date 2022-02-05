@@ -4,7 +4,7 @@ import time
 
 from mail import sendmail
 
-WORKERS = 5
+WORKERS = 4
 ETH = "Feab6260F1c88b515137E152593ac6b3683D925B"
 MAIL = True # Do not set this to false!
 
@@ -28,7 +28,7 @@ while True:
                 print("WARNING email shipped")
                 MAIL = False
             
-            else:
+            elif data["data"]["activeWorkers"] < WORKERS:
                 print("Wating for workers to go back online")
 
         else:
