@@ -2,8 +2,12 @@ import requests
 import json
 import time
 
+from mail import sendmail
+
+WORKERS = 5
 ETH = "Feab6260F1c88b515137E152593ac6b3683D925B"
-MAIL = False
+MAIL = True # Do not set this to false!
+
 
 while True:
     response_API = requests.get('https://api.ethermine.org/miner/:' + ETH + '/currentStats')
@@ -14,15 +18,18 @@ while True:
 
         if isinstance(data["data"]["activeWorkers"], int):
 
-            if data["data"]["activeWorkers"] == 4:
+            if data["data"]["activeWorkers"] == WORKERS:
                 print("All workers are online")
                 MAIL = True
             
-            if data["data"]["activeWorkers"] < 4 and MAIL == True:
+            if data["data"]["activeWorkers"] < WORKERS and MAIL == True:
                 print(f"WARNING, Total number of workers are : {data['data']['activeWorkers']}")
-                print("Sending WARNING email")
-                # Send email
+                sendmail()
+                print("WARNING email shipped")
                 MAIL = False
+            
+            else:
+                print("Wating for workers to go back online")
 
         else:
             print("Respons value error")
