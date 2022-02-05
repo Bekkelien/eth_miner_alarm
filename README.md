@@ -1,4 +1,4 @@
-# ETH miner hasrate alarm/monitoring
+# ETH miner hashrate alarm/monitoring
 
 ## Needs to have your spesific ETH_ADRESS and email in config
 
