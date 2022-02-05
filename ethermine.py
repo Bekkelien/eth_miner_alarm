@@ -1,10 +1,11 @@
 import requests
 import json
 import time
+from datetime import datetime
 
 from mail import sendmail
 
-WORKERS = 4
+WORKERS = 5
 ETH = "Feab6260F1c88b515137E152593ac6b3683D925B"
 MAIL = True # Do not set this to false!
 
@@ -19,22 +20,22 @@ while True:
         if isinstance(data["data"]["activeWorkers"], int):
 
             if data["data"]["activeWorkers"] == WORKERS:
-                print("All workers are online")
+                print(f"{datetime.now().time()} All workers are online")
                 MAIL = True
             
             if data["data"]["activeWorkers"] < WORKERS and MAIL == True:
-                print(f"WARNING, Total number of workers are : {data['data']['activeWorkers']}")
+                print(f"{datetime.now().time()}  WARNING, Total number of workers are : {data['data']['activeWorkers']}")
                 sendmail()
-                print("WARNING email shipped")
+                print(f"{datetime.now().time()} WARNING email shipped")
                 MAIL = False
             
             elif data["data"]["activeWorkers"] < WORKERS:
-                print("Wating for workers to go back online")
+                print(f"{datetime.now().time()} Wating for workers to go back online")
 
         else:
-            print("Respons value error")
+            print(f"{datetime.now().time()} Respons value error")
     else:
-        print("API Error")
+        print(f"{datetime.now().time()} API Error")
 
     time.sleep(60)
     

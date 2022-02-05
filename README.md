@@ -9,7 +9,9 @@ ETH = "ETH_ADRESS"
 
 ### ehtermine.py for active workers warning
 
-Note that if we can't send email it will crash, add inn retry on send email
+Note 
+* That if we can't send email it will crash, add inn retry on send email
+* Datetime is now for every print, make a function in the future
 
 ```python
 WORKERS = 4
