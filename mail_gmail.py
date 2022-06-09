@@ -8,7 +8,7 @@ config = read_config()
 to = config["mail"]["to"]
 fro_m = config["mail"]["from"]
 pwd = config["mail"]["pwd"]
-smtp = config["mail"]["smtp"]
+smtp = "smtp.gmail.com"
 
 message = "| Miner has lower hashrate than expected |"
 

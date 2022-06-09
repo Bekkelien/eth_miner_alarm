@@ -8,7 +8,6 @@ mail:
   to: "test@example.com"
   from: "test@example.com"
   pwd: "pwd"
-  smtp: "smtp.xxxx.com"
 
 eth:
   nanominer: "xxxx"
@@ -21,7 +20,7 @@ eth:
 Expect up to 10min delay, still way 'better' then ethermine's alarm system
 
 Note:
-- [ ] That if we can't send email it will crash, add inn retry on send email
+- [x] That if we can't send email it will crash, add inn retry on send email
 - [ ] Datetime is now for every print, make a function in the future
 
 

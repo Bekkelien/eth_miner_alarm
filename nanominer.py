@@ -3,7 +3,7 @@ import time
 
 from datetime import datetime
 
-from mail import sendmail
+from mail_gmail import sendmail
 
 from configuration import read_config 
 

@@ -3,7 +3,7 @@ import json
 import time
 from datetime import datetime
 
-from mail import sendmail
+from mail_outlook import sendmail
 from configuration import read_config 
 
 config = read_config()
@@ -23,16 +23,22 @@ while True:
 
         if isinstance(reported_hashrate,int):
             reported_hashrate = reported_hashrate / 1000000
+
             if reported_hashrate >= HASHRATE_LIMIT:
                 print(f"{datetime.now().time()} Reported hashrate: {reported_hashrate} MH/s")
                 MAIL = True
             
             if MAIL == True:
                 if reported_hashrate < HASHRATE_LIMIT:
-                    MAIL = False
+                    
                     print(f"{datetime.now().time()} WARNING, Reported hashrate are: {reported_hashrate} MH/s")
-                    sendmail()
-                    print(f"{datetime.now().time()} WARNING email shipped")
+                    try:
+                        if sendmail():
+                            print(f"{datetime.now().time()} WARNING email shipped")
+                            MAIL = False
+
+                    except:
+                        print(f"{datetime.now().time()} WARNING email is unavailable")
                     
             else:
                 print(f"{datetime.now().time()} Wating on hashrate")
